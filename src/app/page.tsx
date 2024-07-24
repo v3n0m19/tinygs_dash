@@ -78,14 +78,14 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black p-6">
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-        <div className="flex md:w-[500px]"> {/* Adjusted width for profile card */}
-          <Card className="bg-neutral-900 text-green-300 shadow-none border border-gray-600 rounded-md p-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="md:col-span-1">
+          <Card className="bg-neutral-900 text-green-300 shadow-none border border-gray-600 rounded-md p-3">
             <div className="text-green-300 text-center text-xl font-bold border-b border-gray-600 pb-2">
               Station Details
             </div>
-            <div className="p-2">
-              <pre className="whitespace-pre-wrap p-2 rounded-md">
+            <div className="p-1">
+              <pre className="whitespace-pre-wrap p-1 rounded-md">
                 <span className="text-[#55d1d9]">Name                :</span> <span className="text-[#f096b0]">{stationDetails.name}</span>
                 <br />
                 <span className="text-[#55d1d9]">User ID             :</span> <span className="text-[#f096b0]">{stationDetails.userId}</span>
@@ -105,25 +105,22 @@ const Home: React.FC = () => {
             </div>
           </Card>
         </div>
-        <div className="flex flex-col space-y-4 md:w-[350px]"> {/* Adjusted width for satellite and modem config cards */}
-          <Card className="bg-neutral-900 text-green-300 shadow-none border border-gray-600 rounded-md">
+        <div className="md:col-span-1 lg:col-span-1 flex flex-col space-y-4">
+          <Card className="bg-neutral-900 text-green-300 shadow-none border border-gray-600 rounded-md p-4">
             <div className="p-2">
               <pre className="whitespace-pre-wrap p-2 rounded-md text-center">
                 <span className="text-green-300 text-3xl">{satellite}</span> {/* Updated color and font size */}
               </pre>
             </div>
-          </Card> 
+          </Card>
           <Card className="bg-neutral-900 text-green-300 shadow-none border border-gray-600 rounded-md p-4">
             <div className="p-2">
-              <pre className="whitespace-pre-wrap p-2 rounded-md">
+              <pre className="whitespace-pre-wrap p-1 rounded-md">
                 <span className="text-[#55d1d9]">Mode      :</span> <span className="text-[#f096b0]">{mode}</span>
                 <br />
                 <span className="text-[#55d1d9]">Frequency :</span> <span className="text-[#f096b0]">{freq} MHz</span>
                 <br />
-                <span className="text-[#55d1d9]">NORAD     :</span> <span className="text-[#f096b0]">{norad}</span>
-                <br />
-                <span className="text-[#55d1d9]">Power     :</span> <span className="text-[#f096b0]">{pwr}</span>
-                <br />
+
                 <span className="text-[#55d1d9]">CRC       :</span> <span className="text-[#f096b0]">{crc}</span>
                 <br />
                 <span className="text-[#55d1d9]">Gain      :</span> <span className="text-[#f096b0]">{gain}</span>
